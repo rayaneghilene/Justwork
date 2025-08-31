@@ -25,6 +25,13 @@ To install the requirements run the following command:
 pip install -r requirements.txt
 ```
 
+## Testing
+Add your documents in the data folder (not the most efficient but works for now) and run the following 
+
+```python 
+python -m backend.main  
+```
+
 
 ### Project structure
 ```
