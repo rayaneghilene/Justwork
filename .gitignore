@@ -1,0 +1,198 @@
+# JustWork - Secure .gitignore
+
+# ===============================================================================
+# SECURITY: Environment Variables & Secrets
+# ===============================================================================
+.env
+.env.local
+.env.production
+.env.staging
+*.env
+*.key
+*.pem
+*.p12
+*.pfx
+
+# API Keys and Configuration (if they contain secrets)
+config.json
+**/config.json
+
+# ===============================================================================
+# Python
+# ===============================================================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.nox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.py,cover
+.hypothesis/
+.pytest_cache/
+cover/
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# ===============================================================================
+# AI/ML Models & Data
+# ===============================================================================
+# Large model files
+*.bin
+*.safetensors
+# Model cache directories
+models/
+.cache/
+huggingface_cache/
+transformers_cache/
+
+# Vector stores and embeddings
+vector_store.json
+*.faiss
+*.index
+
+# Data files (remove if you want to track data)
+data/
+*.pdf
+*.docx
+*.csv
+*.xlsx
+
+# ===============================================================================
+# Application Logs & Temp Files
+# ===============================================================================
+logs/
+*.log
+backend.log
+frontend.log
+app.log
+
+# Temporary files
+tmp/
+temp/
+.tmp/
+.temp/
+
+# ===============================================================================
+# Docker
+# ===============================================================================
+# Don't ignore Dockerfile and docker-compose.yml as they're needed
+# But ignore runtime files
+.docker/
+docker-compose.override.yml
+
+# ===============================================================================
+# IDEs & Editors
+# ===============================================================================
+# VSCode
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iws
+*.iml
+*.ipr
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# IPython
+profile_default/
+ipython_config.py
+
+# ===============================================================================
+# OS Generated Files
+# ===============================================================================
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Windows
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+ehthumbs_vista.db
+*.stackdump
+[Dd]esktop.ini
+$RECYCLE.BIN/
+*.cab
+*.msi
+*.msix
+*.msm
+*.msp
+*.lnk
+
+# Linux
+*~
+
+# ===============================================================================
+# Development & Testing
+# ===============================================================================
+.pytest_cache/
+.coverage
+.mypy_cache/
+.dmypy.json
+dmypy.json
+
+# Local development overrides
+local_settings.py
+settings_local.py
+
+# ===============================================================================
+# Documentation Build Files
+# ===============================================================================
+site/
+docs/_build/
+
+# ===============================================================================
+# Backup Files
+# ===============================================================================
+*.bak
+*.backup
+*.old
+*.orig
+*~

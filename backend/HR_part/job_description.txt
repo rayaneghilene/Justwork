@@ -1,0 +1,82 @@
+job_description = """
+teration 5 — Final Refined Job Posting
+
+Job Title: Backend Software Engineer (Python/FastAPI, SaaS Platform)
+
+Location: Remote (must overlap with European time zones)
+Employment Type: Full-time
+Department: Engineering
+
+About the Company
+
+We build a SaaS workflow automation platform used by small and mid-sized businesses across Europe to reduce manual operations and improve process reliability. Our system executes high volumes of concurrent tasks, requiring efficient backend design and robust data handling. We value engineers who combine strong technical expertise with input into product direction.
+
+Role Overview
+
+We are looking for a mid-level backend software engineer to expand our product team. The role centers on building high-performance backend APIs in Python using FastAPI, managing asynchronous task execution pipelines with Celery, and contributing to product development discussions with product managers and designers.
+
+Key Responsibilities
+
+Design, build, and maintain backend APIs in Python (FastAPI).
+
+Implement asynchronous background tasks using Celery.
+
+Write robust unit and integration tests with pytest.
+
+Ensure backend performance under high concurrency and load.
+
+Collaborate with product managers and designers to shape feature specifications.
+
+Participate in architectural discussions and contribute to technical decision-making.
+
+Maintain security best practices and compliance when handling customer data.
+
+Monitor, troubleshoot, and optimize production systems deployed on AWS.
+
+Requirements
+
+Must-Have
+
+3–5 years of backend development experience.
+
+Strong proficiency in Python, with experience in FastAPI (or similar web frameworks).
+
+Experience with task queues (Celery or equivalent).
+
+Solid understanding of relational databases (PostgreSQL preferred) and query optimization.
+
+Familiarity with AWS (EC2, S3, RDS, Lambda).
+
+Experience writing tests with pytest.
+
+Understanding of RESTful API design and best practices for concurrency.
+
+Strong grasp of software security principles.
+
+Nice-to-Have
+
+Exposure to frontend frameworks (React).
+
+Experience with Docker and Kubernetes.
+
+Familiarity with CI/CD pipelines (GitHub Actions, GitLab CI).
+
+Knowledge of distributed systems.
+
+Prior SaaS product experience.
+
+Compensation and Benefits
+
+Salary: €55,000–€70,000 annually, depending on experience.
+
+Stock option plan.
+
+Flexible work hours and full remote setup.
+
+Health insurance.
+
+Annual budget for courses, books, and conferences.
+
+
+
+"""

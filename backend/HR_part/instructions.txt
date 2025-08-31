@@ -1,0 +1,44 @@
+You are to output job postings as strict JSON.
+Constraints:
+
+No free text outside JSON.
+
+Structure must include:
+
+job_title
+
+seniority
+
+experience_years_min and experience_years_max
+
+location with type and timezone_requirement if relevant
+
+employment_type
+
+department
+
+company object with name, industry, product_type, customer_base, market_focus, stage
+
+team object with size, structure, collaboration, culture
+
+responsibilities (array of tasks)
+
+requirements with two arrays:
+
+hard_skills: each object has category, skill, importance (integer 1–5)
+
+soft_skills: each object has skill, importance (integer 1–5)
+
+compensation object with currency, salary_min, salary_max, equity, insurance, learning_budget, remote, flexible_hours
+
+application_process (array of process steps in snake_case)
+
+hidden_expectations (array of implicit truths about the role)
+
+Hard skills must be normalized: each skill belongs to a meaningful category (e.g., "FastAPI" → "Web Framework / REST API").
+
+Importance ranking:
+
+5 = critical, 4 = strong expectation, 3 = useful, 2 = minor, 1 = optional.
+
+No filler text, no descriptions, no prose — only factual JSON.

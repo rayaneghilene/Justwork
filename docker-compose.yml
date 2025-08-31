@@ -1,0 +1,53 @@
+version: '3.8'
+
+networks:
+  justwork-network:
+    driver: bridge
+
+services:
+  justwork-backend:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONPATH=/app
+      - API_KEY=${API_KEY}
+      - DATA_FOLDER=${DATA_FOLDER:-data}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-all-MiniLM-L12-V2}
+      - KEYWORD_MODEL=${KEYWORD_MODEL:-numind/NuExtract-tiny}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    networks:
+      - justwork-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Frontend service
+  justwork-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.frontend
+    ports:
+      - "8501:8501"
+    environment:
+      - BACKEND_URL=http://justwork-backend:8000
+      - STREAMLIT_SERVER_HEADLESS=true
+      - STREAMLIT_SERVER_ENABLE_CORS=false
+    depends_on:
+      justwork-backend:
+        condition: service_healthy
+    restart: unless-stopped
+    networks:
+      - justwork-network
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8501/_stcore/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
