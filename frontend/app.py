@@ -59,8 +59,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# API Configuration
-API_BASE_URL = "http://localhost:8000"
+# API Configuration - use environment variable for Docker compatibility
+import os
+API_BASE_URL = os.getenv("BACKEND_URL", "http://localhost:8000")
 
 def check_backend_status():
     """Check if backend is running"""
@@ -105,13 +106,49 @@ def main():
     st.markdown('<div class="main-header">💼 JustWork</div>', unsafe_allow_html=True)
     st.markdown('<div class="sub-header">Upload your CV and find the perfect job matches</div>', unsafe_allow_html=True)
     
+    # Display connection info in sidebar for debugging
+    with st.sidebar:
+        st.markdown("### 🔧 Debug Info")
+        st.code(f"Backend URL: {API_BASE_URL}")
+        if os.getenv("BACKEND_URL"):
+            st.code(f"Docker Mode: ✅")
+        else:
+            st.code(f"Local Mode: ✅")
+    
     # Check backend status
-    if not check_backend_status():
-        st.error("⚠️ Backend server is not running. Please start the backend on http://localhost:8000")
-        st.info("Run: `cd backend && python main.py` to start the backend")
+    with st.spinner("🔍 Checking backend connection..."):
+        backend_status = check_backend_status()
+    
+    if not backend_status:
+        st.error(f"⚠️ Backend server is not running at {API_BASE_URL}")
+        
+        with st.expander("🔧 Troubleshooting Help"):
+            if "localhost" in API_BASE_URL:
+                st.markdown("""
+                **Local Development:**
+                1. Run: `cd backend && python main.py` to start the backend
+                2. Make sure port 8000 is not blocked
+                3. Check if backend is running: `curl http://localhost:8000`
+                """)
+            else:
+                st.markdown("""
+                **Docker Mode:**
+                1. Make sure Docker containers are running: `docker-compose ps`
+                2. Check container logs: `docker-compose logs justwork-backend`
+                3. Verify network connectivity: `docker-compose exec justwork-frontend curl http://justwork-backend:8000`
+                4. Restart services: `docker-compose restart`
+                """)
+            
+            st.markdown(f"""
+            **Current Configuration:**
+            - Backend URL: `{API_BASE_URL}`
+            - Environment: `{'Docker' if os.getenv('BACKEND_URL') else 'Local'}`
+            - User Agent: `Streamlit Frontend`
+            """)
+        
         return
     
-    st.success("✅ Backend server is running")
+    st.success(f"✅ Backend server is running at {API_BASE_URL}")
     
     # File upload section
     st.markdown("### 📤 Upload Your CV")
