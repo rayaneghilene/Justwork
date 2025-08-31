@@ -1,0 +1,77 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+env/
+venv/
+ENV/
+env.bak/
+venv.bak/
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# Development files
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Documentation
+README.md
+*.md
+
+# Logs
+*.log
+logs/
+backend.log
+
+# Node modules (if any)
+node_modules/
+
+# Docker
+Dockerfile
+.dockerignore
+docker-compose*.yml
+
+# Data files (these will be uploaded at runtime)
+data/*.pdf
+
+# Vector store (will be generated at runtime)
+vector_store.json
+
+# Frontend specific files (not needed for backend deployment)
+# frontend/ - commented out to allow frontend Docker builds
+
+# License
+LICENSE
+
+# Cache
+.cache/
+.pytest_cache/
