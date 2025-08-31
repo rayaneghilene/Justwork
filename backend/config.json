@@ -1,0 +1,6 @@
+{
+    "api_key": "YOUR_MISTRAL_API_KEY",
+    "data_folder": "data",
+    "embedding_model": "all-MiniLM-L12-V2",
+    "keyword_model": "numind/NuExtract-tiny"
+  }

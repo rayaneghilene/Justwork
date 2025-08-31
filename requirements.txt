@@ -1,0 +1,12 @@
+langchain
+langchain-community
+langchain_mistralai
+langchain-huggingface
+ollama
+streamlit
+sentence-transformers
+pypdf
+mistralai
+watchdog
+faiss-cpu
+langchain-huggingface
